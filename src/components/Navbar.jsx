@@ -4,7 +4,7 @@ import { useEffect, useState, useContext } from "react";
 import { translations } from "./ui/translations";
 import { LanguageContext } from "./LanguageToggle"; // importuojam context
 
-const navKeys = ["home", "about", "skills", "projects", "career", "contact"];
+const navKeys = ["home", "about", "career", "skills", "projects", "career", "contact"];
 
 export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);

@@ -72,8 +72,19 @@ export const translations = {
     messageSentTitle: "Message sent!",
     messageSentDescription:
       "Thank you for your message. I'll get back to you soon.",
+      careerSection: {
+  title: "My",
+  highlight: "Career",
+  events: {
+    event1: "Graduated from a vocational school with a 'Web developer' qualification",
+    event2: "Gained 'JavaScript Developer' certification",
+    event3: "Worked as a developer at 'Auvika'",
+    event4: "Gained 'Responsive Web Developer certification'"
+  }
+},
+
   },
-  lt: {
+lt: {
     home: "Pradžia",
     about: "Apie",
     skills: "Įgūdžiai",
@@ -145,5 +156,16 @@ contactTitle: "Susisiekime",
     messageSentTitle: "Žinutė išsiųsta!",
     messageSentDescription:
       "Ačiū už Jūsų žinutę. Greitai su Jumis susisieksiu.",
+      careerSection: {
+  title: "Mano",
+  highlight: "Karjera",
+  events: {
+    event1: "Baigiau profesinę gimnaziją ir įgijau 'Žiniatinklio Programuotojo' kvalifikaciją",
+    event2: "Įgijau 'JavaScript programuotojas' kvalifikaciją",
+    event3: "Dirbau programuotoju įmonėje  'Auvika'",
+    event4: "Įgijau 'Responsive Web Developer' sertifikatą'"
+
+  }
+},
   },
 };
