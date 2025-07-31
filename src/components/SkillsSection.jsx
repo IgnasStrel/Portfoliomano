@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { cn } from "@/lib/utils";
+import { LanguageContext } from "./LanguageToggle";
+import { translations } from "./ui/translations";
 
 const skills = [
-  // Frontend
+  // tavo skills array lieka be pakeitimų
   { name: "HTML/CSS", level: 99, category: "frontend" },
   { name: "JavaScript", level: 75, category: "frontend" },
   { name: "React", level: 75, category: "frontend" },
@@ -11,7 +13,6 @@ const skills = [
   { name: "Next.js", level: 60, category: "frontend" },
   { name: "Jquery", level: 80, category: "frontend" },
 
-  // Backend
   { name: "Node.js", level: 65, category: "backend" },
   { name: "Express", level: 75, category: "backend" },
   { name: "MongoDB", level: 80, category: "backend" },
@@ -21,7 +22,6 @@ const skills = [
   { name: "Laravel", level: 65, category: "backend" },
   { name: "SEO", level: 30, category: "backend" },
 
-  // Tools
   { name: "Git/GitHub", level: 90, category: "tools" },
   { name: "Docker", level: 70, category: "tools" },
   { name: "Figma", level: 85, category: "tools" },
@@ -33,15 +33,18 @@ const categories = ["all", "frontend", "backend", "tools"];
 
 export const SkillsSection = () => {
   const [activeCategory, setActiveCategory] = useState("all");
+  const { language } = useContext(LanguageContext);
+  const t = translations[language];
 
   const filteredSkills = skills.filter(
     (skill) => activeCategory === "all" || skill.category === activeCategory
   );
+
   return (
     <section id="skills" className="py-24 px-4 relative bg-secondary/30">
       <div className="container mx-auto max-w-5xl">
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
-          My <span className="text-primary"> Skills </span>
+          {t.mySkills.split(" ")[0]} <span className="text-primary">{t.mySkills.split(" ")[1]}</span>
         </h2>
 
         <div className="flex flex-wrap justify-center gap-4 mb-12">
@@ -53,10 +56,10 @@ export const SkillsSection = () => {
                 "px-5 py-2 rounded-full transition-colors duration-300 capitalize",
                 activeCategory === category
                   ? "bg-primary text-primary-foreground"
-                  : "bg-secondary/70 text-forefround hover:bd-secondary"
+                  : "bg-secondary/70 text-foreground hover:bg-secondary"
               )}
             >
-              {category}
+              {t.categories[category]}
             </button>
           ))}
         </div>
@@ -68,7 +71,7 @@ export const SkillsSection = () => {
               className="bg-card p-6 rounded-lg shadow-xs card-hover"
             >
               <div className="text-left mb-4">
-                <h3 className="font-semibold text-lg"> {skill.name}</h3>
+                <h3 className="font-semibold text-lg">{skill.name}</h3>
               </div>
               <div className="w-full bg-secondary/50 h-2 rounded-full overflow-hidden">
                 <div
