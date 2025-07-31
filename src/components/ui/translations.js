@@ -79,7 +79,7 @@ export const translations = {
     event1: "Graduated from a vocational school with a 'Web developer' qualification",
     event2: "Gained 'JavaScript Developer' certification",
     event3: "Worked as a developer at 'Auvika'",
-    event4: "Gained 'Responsive Web Developer certification'"
+    event4: "Gained 'Responsive Web Developer' certification"
   }
 },
 
