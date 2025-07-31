@@ -31,7 +31,7 @@ export const ContactSection = () => {
             description: t.messageSentDescription,
           });
           setIsSubmitting(false);
-          e.target.reset(); // Ištuštinti formą po siuntimo
+          e.target.reset(); 
         },
         (error) => {
           toast({
@@ -63,7 +63,45 @@ export const ContactSection = () => {
             <h3 className="text-2xl font-semibold mb-6">{t.contactInfoTitle}</h3>
 
             <div className="space-y-6 justify-center">
-              {/* ... kontaktų informacija ... */}
+              <div className="flex items-start space-x-4">
+                <div className="p-3 rounded-full bg-primary/10">
+                  <Mail className="h-6 w-6 text-primary" />
+                </div>
+                <div>
+                  <h4 className="font-medium">{t.emailLabel}</h4>
+                  <a
+                    href={`mailto:${t.emailAddress}`}
+                    className="text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    {t.emailAddress}
+                  </a>
+                </div>
+              </div>
+              <div className="flex items-start space-x-4">
+                <div className="p-3 rounded-full bg-primary/10">
+                  <Phone className="h-6 w-6 text-primary" />
+                </div>
+                <div>
+                  <h4 className="font-medium">{t.phoneLabel}</h4>
+                  <a
+                    href={`tel:${t.phoneNumber}`}
+                    className="text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    {t.phoneNumber}
+                  </a>
+                </div>
+              </div>
+              <div className="flex items-start space-x-4">
+                <div className="p-3 rounded-full bg-primary/10">
+                  <MapPin className="h-6 w-6 text-primary" />
+                </div>
+                <div>
+                  <h4 className="font-medium">{t.locationLabel}</h4>
+                  <a className="text-muted-foreground hover:text-primary transition-colors">
+                    {t.location}
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
 
