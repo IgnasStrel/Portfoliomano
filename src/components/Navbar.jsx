@@ -31,7 +31,7 @@ export const Navbar = () => {
     <nav
       className={cn(
         "fixed w-full z-40 transition-all duration-300",
-        isScrolled ? "py-3 backdrop-blur-sm shadow-xs" : "py-5"
+        isScrolled ? "py-5 backdrop-blur-sm shadow-xs" : "py-5"
       )}
       style={{ backgroundColor: "var(--navbar-background-color)" }}
     >
